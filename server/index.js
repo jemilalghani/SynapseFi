@@ -17,7 +17,7 @@ app.get("/api/users/:userId/getallnodes", achController.getAllNodes);
 app.get("/api/users/:userId/getusertrans", achController.getUserTransactions);
 app.post("/api/users/:userId/createtrans", achController.createTransaction);
 
-const SERVER_PORT = process.env.PORT || 8080;
+const SERVER_PORT = 4000;
 app.listen(SERVER_PORT, () => {
   console.log(`Tuning into Port ${SERVER_PORT} 📡`);
 });
