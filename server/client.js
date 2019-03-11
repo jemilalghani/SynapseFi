@@ -1,7 +1,6 @@
 const Synapse = require("synapsenode");
 const Client = Synapse.Client;
-const User = Synapse.User;
-// console.log(Client.toString());
+
 const client = new Client({
   client_id: process.env.CLIENT_ID,
   client_secret: process.env.CLIENT_SECRET,
@@ -9,8 +8,6 @@ const client = new Client({
   ip_address: process.env.IP,
   isProduction: false
 });
-
 module.exports = {
-  client,
-  User
+  client
 };

@@ -1,0 +1,73 @@
+.Login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginInputs {
+  width: 27%;
+  height: 35%;
+  border-radius: 3px;
+}
+.loginLogo {
+  padding: 10px;
+  position: absolute;
+  top: 180px;
+  left: 55%;
+  width: 100px;
+}
+.loginForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.loginForm > div {
+  width: 100%;
+}
+input {
+  width: 80%;
+  border: none;
+  margin: 5px;
+  font-size: 12px;
+  padding: 10px;
+  padding-left: 30px;
+  border-radius: 3px;
+  outline: none;
+  border: rgb(170, 170, 170) solid 1px;
+}
+input:focus {
+  border: rgba(36, 161, 177, 0.733) solid 1px;
+}
+.logo {
+  height: 15px;
+  position: fixed;
+  top: 4px;
+  transform: translate(-50%, -50%);
+  left: 39%;
+}
+.mail {
+  top: 50%;
+}
+.profile {
+  top: calc(50% - 47px);
+}
+.phone {
+  top: calc(50% + 47px);
+}
+button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 65%;
+  left: 50%;
+  padding: 10px 20px;
+  background: rgb(42, 197, 217);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: 700;
+}
