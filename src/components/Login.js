@@ -13,7 +13,8 @@ class Login extends Component {
       user: "",
       fullName: "",
       email: "",
-      phone: ""
+      phone: "",
+      loading: "Create User"
     };
   }
   handleChange(key, e) {
@@ -22,6 +23,7 @@ class Login extends Component {
   createUser(e) {
     e.preventDefault();
     const { fullName, email, phone } = this.state;
+    this.setState({ loading: "loading..." });
     axios
       .post("/api/user/createuser", {
         name: fullName,
@@ -29,9 +31,15 @@ class Login extends Component {
         phoneNumbers: phone
       })
       .then(user => {
-        console.log(user.data.body);
         this.setState({ user: user.data.body });
-      });
+      })
+      .catch(err =>
+        this.setState({
+          err:
+            "first and last? vaild email (or test@test.com)? and vaild phone (or 901.111.1111)?",
+          loading: "Create User"
+        })
+      );
   }
   render() {
     console.log(this.state);
@@ -45,6 +53,7 @@ class Login extends Component {
           alt=""
         />
         <div className="loginInputs">
+          {this.state.err && <p>{this.state.err}</p>}
           <form className="loginForm" onSubmit={e => this.createUser(e)}>
             <div>
               <img className="logo profile" src={profile} alt="" />
@@ -72,7 +81,12 @@ class Login extends Component {
                 onChange={e => this.handleChange("phone", e)}
               />
             </div>
-            <input className="createUser" type="submit" value="Create User" />
+            <input
+              className="createUser"
+              id="UX"
+              type="submit"
+              value={this.state.loading}
+            />
           </form>
         </div>
       </div>
