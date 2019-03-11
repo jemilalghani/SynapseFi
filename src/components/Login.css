@@ -8,19 +8,22 @@
 }
 .loginInputs {
   width: 27%;
+  min-width: 178px;
   height: 35%;
+  max-height: 278px;
   border-radius: 3px;
 }
 .loginLogo {
   padding: 10px;
   position: absolute;
-  top: 180px;
+  top: 24%;
   left: 55%;
   width: 100px;
 }
 .loginForm {
   width: 100%;
   height: 100%;
+  max-height: 270px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -28,11 +31,14 @@
 }
 .loginForm > div {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55px;
 }
-input {
+.logininput {
   width: 80%;
   border: none;
-  margin: 5px;
   font-size: 12px;
   padding: 10px;
   padding-left: 30px;
@@ -40,30 +46,18 @@ input {
   outline: none;
   border: rgb(170, 170, 170) solid 1px;
 }
-input:focus {
+.logininput:focus {
   border: rgba(36, 161, 177, 0.733) solid 1px;
 }
 .logo {
   height: 15px;
-  position: fixed;
-  top: 4px;
   transform: translate(-50%, -50%);
-  left: 39%;
+  position: relative;
+  top: 7px;
+  left: 30px;
 }
-.mail {
-  top: 50%;
-}
-.profile {
-  top: calc(50% - 47px);
-}
-.phone {
-  top: calc(50% + 47px);
-}
-button {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 65%;
-  left: 50%;
+.createUser {
+  margin-top: 20px;
   padding: 10px 20px;
   background: rgb(42, 197, 217);
   border: none;

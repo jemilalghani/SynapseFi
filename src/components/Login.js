@@ -19,17 +19,21 @@ class Login extends Component {
           <form className="loginForm">
             <div>
               <img className="logo profile" src={profile} alt="" />
-              <input placeholder="Full Name" />
+              <input className="logininput" placeholder="Full Name" />
             </div>
             <div>
               <img className="logo mail" src={mail} alt="" />
-              <input placeholder="Email" />
+              <input className="logininput" placeholder="Email" type="email" />
             </div>
             <div>
               <img className="logo phone" src={phone} alt="" />
-              <input placeholder="Phone Number" />
+              <input
+                className="logininput"
+                placeholder="Phone Number"
+                type="password"
+              />
             </div>
-            <button>Create User</button>
+            <button className="createUser">Create User</button>
           </form>
         </div>
       </div>

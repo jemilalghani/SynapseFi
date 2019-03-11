@@ -1,0 +1,99 @@
+.Dashboard {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.account {
+  width: 250px;
+  min-height: 300px;
+  border: grey solid 1px;
+  border-radius: 4px;
+}
+.transaction {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.payment {
+  width: 450px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sendMoney {
+  background: red;
+  width: 60px;
+  height: 30px;
+  max-width: 60px;
+  max-height: 30px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+}
+.sendMoney:hover {
+  font-weight: 800;
+  font-size: 17px;
+}
+.dollarAmount {
+  padding: 5px;
+  padding-left: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: none;
+  border: solid 1.3px grey;
+  outline: none;
+}
+.dollarAmount:focus {
+  border: solid 1.3px green;
+}
+.money {
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 15px;
+  left: 35px;
+  height: 20px;
+}
+.transactionHistory {
+  width: 500px;
+  min-height: 80vh;
+  border-radius: 4px;
+  background: rgb(42, 197, 217);
+}
+.title {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.friends {
+  width: 200px;
+  min-height: 300px;
+  border: grey solid 1px;
+  border-radius: 4px;
+}
+.select {
+  width: 100px;
+  border: none;
+  background: white;
+  border-bottom: solid 1px grey;
+  outline: none;
+}
+.select:hover {
+  border-bottom: solid 1px rgb(42, 197, 217);
+}
+select {
+  width: 100%;
+  border: none;
+  background: white;
+  outline: none;
+}
