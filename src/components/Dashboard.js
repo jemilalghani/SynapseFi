@@ -100,7 +100,7 @@ class Dashboard extends Component {
           </option>
         );
       });
-    let accounts = this.state.nodes.length ? (
+    let accounts = this.state.nodes ? (
       this.state.nodes.map(el => {
         return (
           <div className="accountName">
@@ -112,7 +112,7 @@ class Dashboard extends Component {
     ) : (
       <div>No Accounts</div>
     );
-    let payFromAccount = this.state.nodes.length ? (
+    let payFromAccount = this.state.nodes ? (
       this.state.nodes.map(el => {
         return <option value={el._id}>{el.info.nickname}</option>;
       })
@@ -120,7 +120,7 @@ class Dashboard extends Component {
       <option>No Accounts</option>
     );
     let transactions =
-      this.state.trans.length &&
+      this.state.trans &&
       this.state.trans.map(el => {
         return (
           <div className="history">
@@ -143,9 +143,9 @@ class Dashboard extends Component {
           <h2>YOUR ACCOUNTS</h2>
           {accounts}
           <div className="new">
-            To create a new account:
+            To Create A New Account:
             <input
-              placeholder="Account Nickname"
+              placeholder="Account Name"
               value={this.state.nickname}
               onChange={e => this.handleChange("nickname", e)}
             />
@@ -160,7 +160,7 @@ class Dashboard extends Component {
               className="sendMoney"
               onClick={() => this.makeTransaction()}
             >
-              send
+              Send To
             </button>
             <div className="select">
               <select
@@ -169,6 +169,7 @@ class Dashboard extends Component {
                 <option value="None">
                   {this.state.accounts ? "SELECT ACCOUNT" : "CLICK USER TO PAY"}
                 </option>
+                <option value="5c86c1a64b7ba9102a5d13b4">TEST ACCOUNT</option>
                 {payFriend}
               </select>
             </div>
@@ -181,7 +182,7 @@ class Dashboard extends Component {
                 onChange={e => this.handleChange("amount", e)}
               />
             </div>
-            <div>from</div>
+            <div>From</div>
             <div className="select">
               <select onChange={e => this.setState({ nodeId: e.target.value })}>
                 <option value="None">Select Your Account</option>

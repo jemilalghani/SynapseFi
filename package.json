@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/index.js",
-  "homepage": "https://jemilalghani.github.io/SynapseFi/",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
@@ -16,12 +15,12 @@
     "synapsenode": "^1.0.12"
   },
   "scripts": {
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env.prod -d",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
