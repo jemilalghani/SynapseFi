@@ -17,6 +17,8 @@ app.get("/api/users/:userId/getallnodes", achController.getAllNodes);
 app.get("/api/users/:userId/getusertrans", achController.getUserTransactions);
 app.post("/api/users/:userId/createtrans", achController.createTransaction);
 
+app.use(express.static(`${__dirname}/../build`));
+
 const SERVER_PORT = 4000;
 app.listen(SERVER_PORT, () => {
   console.log(`Tuning into Port ${SERVER_PORT} 📡`);
