@@ -19,7 +19,7 @@ app.post("/api/users/:userId/createtrans", achController.createTransaction);
 
 app.use(express.static(`${__dirname}/../build`));
 
-const SERVER_PORT = 4000;
+const SERVER_PORT = process.env.PORT || 4000;
 app.listen(SERVER_PORT, () => {
   console.log(`Tuning into Port ${SERVER_PORT} 📡`);
 });
