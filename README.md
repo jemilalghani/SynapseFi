@@ -9,3 +9,6 @@
 5. input amount of money you wish to pay
 6. select from second dropdown one of your accounts to pay from
 7. hit send
+
+
+![Alt](./Media/walkthrough.mov "Walkthrough")
