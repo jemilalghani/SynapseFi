@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const userController = require("./userController");
 const achController = require("./achController");
-const path = require("path");
-const port = process.env.PORT || 5000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,23 +17,13 @@ app.get("/api/users/:userId/getallnodes", achController.getAllNodes);
 app.get("/api/users/:userId/getusertrans", achController.getUserTransactions);
 app.post("/api/users/:userId/createtrans", achController.createTransaction);
 
-//Static file declaration
-app.use(express.static(path.join(__dirname, "/../build")));
+app.use(express.static(`${__dirname}/../build`));
 
-//production mode
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(`${__dirname}/../build`));
-  //
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../build/index.html"));
-  });
-}
-//build mode
+const SERVER_PORT = process.env.PORT || 4000;
+app.listen(SERVER_PORT, () => {
+  console.log(`Tuning into Port ${SERVER_PORT} 📡`);
+});
+const path = require("path");
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
-});
-
-//start server
-app.listen(port, (req, res) => {
-  console.log(`server listening on port: ${port}`);
 });
