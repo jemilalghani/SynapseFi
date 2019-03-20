@@ -20,19 +20,19 @@ app.get("/api/users/:userId/getusertrans", achController.getUserTransactions);
 app.post("/api/users/:userId/createtrans", achController.createTransaction);
 
 //Static file declaration
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "/../build")));
 
 //production mode
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static(`${__dirname}/../build`));
   //
   app.get("*", (req, res) => {
-    res.sendfile(path.join((__dirname = "client/build/index.html")));
+    res.sendFile(path.join(__dirname, "../build/index.html"));
   });
 }
 //build mode
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/public/index.html"));
+  res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
 //start server
