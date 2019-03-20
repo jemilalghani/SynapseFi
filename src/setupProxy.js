@@ -5,7 +5,7 @@ module.exports = app => {
   app.use(
     "/api",
     proxy({
-      target: "http://[::1]" + process.env.PORT || 4000,
+      target: "http://[::1]:" + process.env.PORT || 4000,
       secure: false,
       changeOrigin: true
     })
