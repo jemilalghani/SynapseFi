@@ -31,6 +31,7 @@ class Login extends Component {
         phoneNumbers: phone
       })
       .then(user => {
+        console.log("USER INFO", user);
         this.setState({ user: user.data.body });
       })
       .catch(err =>
