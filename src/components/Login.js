@@ -42,7 +42,6 @@ class Login extends Component {
       );
   }
   render() {
-    console.log(this.state);
     return !this.state.user ? (
       <div className="Login">
         <img
