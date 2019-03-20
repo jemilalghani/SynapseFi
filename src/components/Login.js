@@ -42,7 +42,6 @@ class Login extends Component {
       );
   }
   render() {
-    console.log("adsdfsdfsdfefw", process.env);
     return !this.state.user ? (
       <div className="Login">
         <img

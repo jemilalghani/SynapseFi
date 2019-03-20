@@ -4,6 +4,6 @@ require("dotenv").config();
 module.exports = app => {
   app.use(
     "/api",
-    proxy({ target: "http://localhost:" + process.env.PORT || 4000 })
+    proxy({ target: "https://localhost:" + process.env.PORT || 4000 })
   );
 };
